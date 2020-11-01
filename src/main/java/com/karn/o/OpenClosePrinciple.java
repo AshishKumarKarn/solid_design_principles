@@ -13,8 +13,18 @@ public class OpenClosePrinciple {
         Product product1 = new Product("Apple", Size.SMALL, Color.GREEN, Price.HIGH);
         Product product2 = new Product("Strawberry", Size.SMALL, Color.RED, Price.MEDIUM);
         Product product3 = new Product("WaterMellon", Size.LARGE, Color.GREEN, Price.LOW);
+        Product product4 = new Product("Mango", Size.MEDIUM, Color.GREEN, Price.HIGH);
+        Product product5 = new Product("Banana", Size.MEDIUM, Color.GREEN, Price.LOW);
+        Product product6 = new Product("CustardApple", Size.MEDIUM, Color.GREEN, Price.LOW);
+        Product product7 = new Product("Blueberry", Size.SMALL, Color.BLUE, Price.HIGH);
+        Product product8 = new Product("Litchi", Size.SMALL, Color.RED, Price.MEDIUM);
+        Product product9 = new Product("Guava", Size.MEDIUM, Color.GREEN, Price.LOW);
+        Product product10 = new Product("Pomegranate", Size.MEDIUM, Color.RED, Price.HIGH);
+        Product product11 = new Product("Kiwi", Size.SMALL, Color.GREEN, Price.HIGH);
+        Product product12 = new Product("Papaya", Size.LARGE, Color.GREEN, Price.LOW);
 
-        List<Product> products = List.of(product1, product2, product3);
+
+        List<Product> products = List.of(product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12);
         OpenCloseViolatingProductFilter oldFilter = new OpenCloseViolatingProductFilter();
         System.out.println("GREEN products");
         oldFilter.filterProductByColor(products, Color.GREEN).forEach(System.out::println);
@@ -144,7 +154,7 @@ class Product {
 
     @Override
     public String toString() {
-        return productName+" ";
+        return productName + " ";
     }
 }
 
