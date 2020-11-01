@@ -20,11 +20,11 @@ public class OpenClosePrinciple {
         oldFilter.filterProductByColor(products, Color.GREEN).forEach(System.out::println);
 
         System.out.println("GREEN products using recommended filter");
-        RecommendedProductColorFilter recommendedProductColorFilter = new RecommendedProductColorFilter();
-        recommendedProductColorFilter.filterItem(products, new ColorSpecification(Color.GREEN)).forEach(System.out::println);
+        RecommendedProductFilter recommendedProductFilter = new RecommendedProductFilter();
+        recommendedProductFilter.filterItem(products, new ColorSpecification(Color.GREEN)).forEach(System.out::println);
 
         System.out.println("High price products using recommended filter");
-        recommendedProductColorFilter.filterItem(products, s -> s.getPrice() == Price.HIGH).forEach(System.out::println);
+        recommendedProductFilter.filterItem(products, s -> s.getPrice() == Price.HIGH).forEach(System.out::println);
 
     }
 }
@@ -85,7 +85,7 @@ class SizeSpecification implements Specification<Product> {
 // implement new specification or use lambda to define specification implementation and you
 // don't need to modify existing implementation
 
-class RecommendedProductColorFilter implements Filter<Product> {
+class RecommendedProductFilter implements Filter<Product> {
     @Override
     public Stream<Product> filterItem(List<Product> products, Specification<Product> specification) {
         return products.stream().filter(p -> specification.isSatisfied(p));
