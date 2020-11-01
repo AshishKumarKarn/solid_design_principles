@@ -37,6 +37,11 @@ public class OpenClosePrinciple {
         System.out.println("High price products using recommended filter");
         recommendedProductFilter.filterItem(products, s -> s.getPrice() == Price.HIGH).forEach(System.out::println);
 
+        //Practically you really don't need any of these filters here but you can use existing one.
+        //The above codes are just to demo the concept
+        System.out.println("High price Blue products using in-built stream filter");
+        products.stream().filter(p->p.getPrice()==Price.HIGH).filter(p->p.getColor()==Color.BLUE).forEach(System.out::println);
+
     }
 }
 
