@@ -48,7 +48,7 @@ class Journal {
         return journals.stream().map(a->"\n"+a).collect(Collectors.joining());
     }
 
-    /**
+    /*
     * Violation of SRP
     *
     public void saveToFile(String filePathWithFileName, boolean overwrite) throws FileNotFoundException {
