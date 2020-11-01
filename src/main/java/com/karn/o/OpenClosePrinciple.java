@@ -23,6 +23,7 @@ public class OpenClosePrinciple {
         RecommendedProductFilter recommendedProductFilter = new RecommendedProductFilter();
         recommendedProductFilter.filterItem(products, new ColorSpecification(Color.GREEN)).forEach(System.out::println);
 
+        //the recommended filter is open for extension but closed for modification
         System.out.println("High price products using recommended filter");
         recommendedProductFilter.filterItem(products, s -> s.getPrice() == Price.HIGH).forEach(System.out::println);
 
